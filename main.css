@@ -1,0 +1,23 @@
+#wrapper {
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container1 {
+  margin-left: 40px;
+}
+.container2 {
+  margin-right: 40px;
+}
+
+.card {
+  height: 400px;
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.card-hidden {
+  display: none;
+}
