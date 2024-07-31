@@ -9,9 +9,12 @@
   margin: 0 auto;
 
 }
+#sortButton {
+  margin-bottom: 25px;
+}
 
-.container1 {
-  margin-right: auto;
+#schoolAssgn {
+  margin-right: 25px;
 }
 .container2 {
   margin-left: auto;
