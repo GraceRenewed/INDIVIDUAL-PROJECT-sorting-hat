@@ -44,38 +44,41 @@ introButton.addEventListener("click", () => {
 });
 
 
-
 //A function that takes the information from the Houses array and
 //enters it into bootstrap html code below and puts it on the DOM
-const schoolAssgn = (Houses) => {
-  let domString ="";
+  const schoolAssgn = (Houses) => {
+    let domString ="";
 
-  Houses.forEach((item) => {
-    domString += `<div class="card" style="width: 14rem;" >
-      <img src=${item.imageUrl} class="card-img-top" alt=${item.houseAssgn}>
-      <div class="card-body">
-      <h5 class="house-title">${item.houseAssgn}</h5>
-      <p class="welcome-text">Welcome, ${item.name} your path has been chosen!</p>
-      <a href="#" class="btn btn-primary">Expel</a>
-  </div>
-    </div>`;
-  })
-  renderToDom("#schoolAssgn", domString);
+    Houses.forEach((item) => {
+      domString += `<div class="card" style="width: 14rem;" >
+        <img src=${item.imageUrl} class="card-img-top" alt=${item.houseAssgn}>
+        <div class="card-body">
+        <h5 class="house-title">${item.houseAssgn}</h5>
+        <p class="welcome-text">Welcome, ${item.name} your path has been chosen!</p>
+        <a href="#" class="btn btn-primary">Expel</a>
+    </div>
+      </div>`;
+      })
+  }
+//Function that picks a random house
+function sorting_Houses () {
+  const randomHouse = Math.floor(Math.random() * Houses.length);
+  return Houses[randomHouse];
 }
-
 //When the sortButton(Sort Now) is clicked 
 //a random house is selected
-//sortButton.addEventListener("click", () => {
-//   function sorting_Houses () {
-//     console.log(Houses[(Math.floor(Math.random() * Houses.length))]);
-//   }
-//   schoolAssgn(Houses)
-// })
+ sortButton.addEventListener("click", () => {
+     console.log(sorting_Houses())
+    });
+  
+    //renderToDom("#hats", sortButton.addEventListener())
+    
+  
 
 
 const startApp = () => {
   schoolAssgn(Houses);
-  
+  sortButton
 }
 
 startApp();
