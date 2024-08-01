@@ -26,14 +26,17 @@ const Houses = [
   }
 ]
 
+//Utility funciton that puts html on the DOM by inserting information in the location specified by the divID 
 const renderToDom = (divId, htmlToRender) => {
+  //Gives a name to use in JS to a specific divId in html
   const selectedDiv = document.querySelector(divId);
+  //tells JS to insert that information into the html document that will then render to the DOM
   selectedDiv.innerHTML =htmlToRender;
 }
 
 
 const introButton = document.querySelector("#introButton");
-const sortButton = document.querySelector("#sortButton");
+const sortButton = document.getElementById("#sortButton");
 const form = document.querySelector("form");
 
 //when the introButton(Let the Sorting Begin) is clicked
@@ -47,71 +50,45 @@ introButton.addEventListener("click", () => {
 
 //A function that takes the information from the Houses array and
 //enters it into bootstrap html code below and puts it on the DOM
-  const schoolAssgn = (Houses) => {
-    let domString ="";
+const schoolAssgn = (Houses) => {
+  let domString ="";
 
-    Houses.forEach((item) => {
-      domString += `<div class="card" style="width: 14rem;" >
-        <img src=${item.imageUrl} class="card-img-top" alt=${item.houseAssgn}>
-        <div class="card-body">
-        <h5 class="house-title">${item.houseAssgn}</h5>
+  Houses.forEach((item) => {
+    domString += `<div class="card" style="width: 14rem;" >
+      <img src=${item.imageUrl} class="card-img-top" alt=${item.houseAssgn}>
+      <div class="card-body">
+      <h5 class="house-title">${item.houseAssgn}</h5>
         <p class="welcome-text">Welcome, ${item.name} your path has been chosen!</p>
-        <a href="#" class="btn btn-primary">Expel</a>
+      <a href="#" class="btn btn-primary">Expel</a>
     </div>
       </div>`;
       })
-  }
-//Function that picks a random house
-function sorting_Houses () {
-  const randomHouse = Math.floor(Math.random() * Houses.length);
-  sortButton [randomHouse]
-}
-//Empty array where new student cards will go
-const assgnHouse = [];
+//Calling the function and telling it to put the information in the HTML id and placing it on the DOM
+      renderToDom("#hats", domString)
+    }
 
-
+    //Function that picks a random house
+    function sorting_Houses () {
+      const randomHouse = Math.floor(Math.random() * Houses.length);
+      return randomHouse
+    }
   
-    //renderToDom("#hats", sortButton.addEventListener())
+//Empty array where new student cards will go
+const randomHouse = [];
     
-  //Function that takes the values from the form and creates a new card when the sort button is activated  
-const newStudent =(e) => {
+  //Function that makes a new card and places it in the randomHouse array when the sortButton is pressed  
+const newStudent = (e) => {
     e.preventDefault();
 
-    //Makes a new card with the information
+    //Makes a new card with the information(I think this is all the information I need for this because I want the random function to pull a card from the schoolAssgn function, which is already styled and has the information on it, the name should populate from the name id which is assigned in the html of the form)
     const newCard = {
       id: assgnHouse.length + 1,
-      sorting_Houses();
-      
-
     }
-    assgnHouse.push(newCard);
+    //Calls the sortingHouse function and puts newCard in assgnHouse array and resets form
+    sorting_Houses();
+    randomHouse.push(newCard);
     form.reset();
   }
+
 //EventListener that is activates the newStudent function
-form.addEventListener("sortButton", newStudent)
-
-const startApp = () => {
-  newStudent;
-  
-}
-
-startApp();
-//  //a function to take information that is selected or created and place it on the DOM, uses the new item Id and the text on the card
-//  const renderToDom = (divId, cardToRender) => {
-//     //creates a variable and makes it equal to the element we want to put on the DOM
-//     const selectedElement=document.querySelector(divId);
-//     //takes the new card and places it in the HTML file and replaces what is there to put on the DOM
-//     selectedElement.innerHTML = cardToRender;
-    
-//  };
-
-//  const sortBtn = () => {
-//     const domString = 
-
-
-
-
-
-
-//     //Calling the function and telling it to put the information in the HTML id and placing it on the DOM
-//     renderToDom("#schoolAssignments", domString);
+form.submit("sortButton", newStudent);
