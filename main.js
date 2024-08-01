@@ -80,13 +80,11 @@ const newStudent =(e) => {
     //Makes a new card with the information
     const newCard = {
       id: assgnHouse.length + 1,
-      imageUrl: document.querySelector("#imageUrl").value,
-      name: document.querySelector("#name").value,
-      houseAssgn: document.querySelector("#houseAssgn").value,
+      sorting_Houses();
+      
 
     }
     assgnHouse.push(newCard);
-    sorting_Houses();
     form.reset();
   }
 //EventListener that is activates the newStudent function
