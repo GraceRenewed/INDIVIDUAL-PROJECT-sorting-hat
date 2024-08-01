@@ -34,6 +34,7 @@ const renderToDom = (divId, htmlToRender) => {
 
 const introButton = document.querySelector("#introButton");
 const sortButton = document.querySelector("#sortButton");
+const form = document.querySelector("form");
 
 //when the introButton(Let the Sorting Begin) is clicked
 //the Name entry field and introButton(Sort Now)should appear
@@ -63,22 +64,37 @@ introButton.addEventListener("click", () => {
 //Function that picks a random house
 function sorting_Houses () {
   const randomHouse = Math.floor(Math.random() * Houses.length);
-  return Houses[randomHouse];
+  sortButton [randomHouse]
 }
-//When the sortButton(Sort Now) is clicked 
-//a random house is selected
- sortButton.addEventListener("click", () => {
-     console.log(sorting_Houses())
-    });
+//Empty array where new student cards will go
+const assgnHouse = [];
+
+
   
     //renderToDom("#hats", sortButton.addEventListener())
     
-  
+  //Function that takes the values from the form and creates a new card when the sort button is activated  
+const newStudent =(e) => {
+    e.preventDefault();
 
+    //Makes a new card with the information
+    const newCard = {
+      id: assgnHouse.length + 1,
+      imageUrl: document.querySelector("#imageUrl").value,
+      name: document.querySelector("#name").value,
+      houseAssgn: document.querySelector("#houseAssgn").value,
+
+    }
+    assgnHouse.push(newCard);
+    sorting_Houses();
+    form.reset();
+  }
+//EventListener that is activates the newStudent function
+form.addEventListener("sortButton", newStudent)
 
 const startApp = () => {
-  schoolAssgn(Houses);
-  sortButton
+  newStudent;
+  
 }
 
 startApp();
