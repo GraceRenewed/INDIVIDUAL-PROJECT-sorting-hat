@@ -37,7 +37,9 @@ const renderToDom = (divId, htmlToRender) => {
 
 const introButton = document.querySelector("#introButton");
 const form = document.querySelector("#form");
+const schoolAssgn =document.querySelector("#schoolAssgn")
 
+// const schoolAssgn = document.querySelector("#schoolAssgn")
 
 //when the introButton(Let the Sorting Begin) is clicked
 //the Name entry field and submit(Sort Now)should appear
@@ -47,9 +49,6 @@ introButton.addEventListener("click", () => {
   console.log("introButton test");
 });
 
-
-//A function that takes the information from the Houses array and
-//enters it into bootstrap html code below and puts it on the DOM
 const schoolsOnDom = (Houses) => {
   let domString ="";
 
@@ -63,45 +62,64 @@ const schoolsOnDom = (Houses) => {
     </div>
       </div>`;
       })
-//Calling the function and telling it to put the information in the HTML id and placing it on the DOM
-      renderToDom("#hats", domString)
-    }
-
-    //Function that picks a random house
-    form.addEventListener("#submit", function(event) {
-      event.preventDefault();
-      const studentName =document.getElementById("#name").value
-      console.log(studentName)
-
-    })
-      
-      function sorting_Houses () {
-      const randomHouse = Math.floor(Math.random() * Houses.length);
-      return Houses [randomHouse]
-
+// //Calling the function and telling it to put the information in the HTML id and placing it on the DOM
+      // renderToDom("#hats", domString)
     }
    
-    console.log( sorting_Houses() )
-//Empty array where new student cards will go
+  //Function that pulls a random house from the Houses array
+    function sorting_Houses () {
+      const randomHouse = Math.floor(Math.random() * Houses.length);
+      return Houses [randomHouse]
+    }
+  
+  let randomHouse = sorting_Houses(Houses);
+  console.log(randomHouse)  
 
-const randomHouse = [{}];
-    
-  console.log(randomHouse);
+  renderToDom("#hats", "randomHouse"  + JSON.stringify(randomHouse))
+
+const startApp = () => {
+  
+  // schoolsOnDom(Houses);
+}
+
+startApp();
+
+//Trying to combine the function and the array did not work, random function failed to work
+  // let randomHouse = [  
+  //   function sorting_Houses () {
+  //     const randomHouse = Math.floor(Math.random() * Houses.length);
+  //     return Houses [randomHouse]
+  //   }
+  // ]
+
+// form.addEventListener("submit", function() { 
+//   let randomHouse = Math.floor(Math.random() * Houses.length);
+//   schoolAssgn.innerHTML = Houses[randomHouse]
+// })
+
+// const sortHouses = (Houses) => {
+//   let randomHouse = Math.floor(Math.random() * Houses.length);
+//   randomHouse.push(newHouses);
+//   renderToDom("hats", newHouses)
+// }
+
+
+// //A function that takes the information from the Houses array and
+// //enters it into bootstrap html code below and puts it on the DOM
+// const  studentsOnDom = (randomHouse) => {
+//   let domString ="";
+
+//   randomHouse => {
+//     domString += `<div class="card" style="width: 14rem;" >
+//       <img src=${item.imageUrl} class="card-img-top" alt=${item.houseAssgn}>
+//       <div class="card-body">
+//       <h5 class="house-title">${item.houseAssgn}</h5>
+//         <p class="welcome-text">Welcome, ${item.name} your path has been chosen!</p>
  
-// randomHouse.push(sorting_Houses)    
-  //Function that makes a new card and places it in the randomHouse array when the form is pressed  
-// const newStudent = (e) => {
-//     e.preventDefault();
-
-//     //Makes a new card with the information(I think this is all the information I need for this because I want the random function to pull a card from the schoolsOnDom function, which is already styled and has the information on it, the name should populate from the name id which is assigned in the html of the form)
-//     const newCard = {
-//       id: assgnHouse.length + 1,
+//      <a href="#" class="btn btn-primary">Expel</a>
+//     </div>
+//       </div>`;
+//       }
+// //Calling the function and telling it to put the information in the HTML id and placing it on the DOM
+//       renderToDom("#hats", domString)
 //     }
-//     //Calls the sortingHouse function and puts newCard in assgnHouse array and resets form
-//     sorting_Houses();
-//     randomHouse.push(newCard);
-//     form.reset();
-//   }
-
-// //EventListener that is activates the newStudent function
-// form.submit("submit", newStudent);
