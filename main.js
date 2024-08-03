@@ -26,7 +26,8 @@ const Houses = [
   }
 ]
 
-//Utility funciton that puts html on the DOM by inserting information in the location specified by the divID 
+//Utility funciton that puts html on the DOM by inserting
+// information in the location specified by the divID 
 const renderToDom = (divId, htmlToRender) => {
   //Gives a name to use in JS to a specific divId in html
   const selectedDiv = document.querySelector(divId);
@@ -48,7 +49,12 @@ introButton.addEventListener("click", () => {
   console.log("introButton test");
 });
 
-  //Function that pulls a random house from the Houses array, trying to combine it with the schoolOnDom array so maybe I can get the random card to display on the DOM, no luck yet, it seems to be picking random Houses and showing the id only. Finally got it to do the same thing as the two seperate codes, so I combined them!!! Still not correct but progress:)
+  //Function that pulls a random house from the Houses array, 
+  //trying to combine it with the schoolOnDom array so maybe
+  // I can get the random card to display on the DOM, no luck yet, 
+  //it seems to be picking random Houses and showing the id only.
+  // Finally got it to do the same thing as the two seperate codes, 
+  //so I combined them!!! Still not correct but progress:)
     function sorting_Houses ()  {
       
       let domString = "";
@@ -65,10 +71,13 @@ introButton.addEventListener("click", () => {
               }
              )
               return Houses [randomHouse];
-              //renderToDom("#hats", randomHouse)//returns nothing, needs return Houses [randomHouse] above it, tried sorting_Houses(and w/o), Houses does not like statement
+              //renderToDom("#hats", randomHouse)
+              //returns nothing, needs return Houses [randomHouse] above it, 
+              //tried sorting_Houses(and w/o), Houses does not like statement
               
     }
-    //renderToDom("#hats", sorting_Houses()) //returns object Object on DOM
+    //renderToDom("#hats", sorting_Houses())
+     //returns object Object on DOM
     const result = sorting_Houses();
   let randomH = result.randomHouse 
   let newHouse = result.sorting_Houses
@@ -86,7 +95,10 @@ introButton.addEventListener("click", () => {
 
 
 
-   // // These two work in the fact that they pull a random house and place them on the DOM and console log them but it is not in card format, I did try stringify but of course that just makes a string
+   // // These two work in the fact that they pull a random house
+   // and place them on the DOM and console log them but
+   // it is not in card format, 
+   //I did try stringify but of course that just makes a string
   // function sorting_Houses () {
   //   const randomHouse = Math.floor(Math.random() * Houses.length);
   //   return Houses [randomHouse]
@@ -96,7 +108,8 @@ introButton.addEventListener("click", () => {
   // console.log(randomHouse) 
 
 
-//Trying to combine the function and the array did not work, random function failed to work
+//Trying to combine the function and the array did not work, 
+//random function failed to work
   // let randomHouse = [  
   //   function sorting_Houses () {
   //     const randomHouse = Math.floor(Math.random() * Houses.length);
@@ -134,6 +147,7 @@ introButton.addEventListener("click", () => {
 //     </div>
 //       </div>`;
 //       })
-// //Calling the function and telling it to put the information in the HTML id and placing it on the DOM
+// //Calling the function and telling it to put the information
+// in the HTML id and placing it on the DOM
 //       renderToDom("#hats", domString)
 //     }
