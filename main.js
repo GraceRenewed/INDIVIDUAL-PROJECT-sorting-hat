@@ -66,27 +66,27 @@ introButton.addEventListener("click", () => {
       </div>
         </div>`;
         })
-          return ["#schoolAssgn", domString]
+         renderToDom("#schoolAssgn", domString)
         
       }
-    
-     // These two work in the fact that they pull a random house
-     //and place them on the DOM and console log them but
-     //it is not in card format, 
-    function sorting_Houses () {
-      const randomHouse = Math.floor(Math.random() * Houses.length);
-      return Houses[randomHouse]
-    }
+    //renderToDom("#schoolsOnDom", domString)
+//      // These two work in the fact that they pull a random house
+//      //and place them on the DOM and console log them but
+//      //it is not in card format, 
+//     function sorting_Houses () {
+//       const randomHouse = Math.floor(Math.random() * Houses.length);
+//       return Houses[randomHouse]
+//     }
   
-    const randomHouse = sorting_Houses();
+//     const randomHouse = sorting_Houses();
    
-    // console.log(sorting_Houses) //works if return on function says Houses[randomHouse]
+//     // console.log(sorting_Houses) //works if return on function says Houses[randomHouse]
 
-    console.log(randomHouse)
+//     console.log(randomHouse)
 
-  //Calling the function and telling it to put the information
-//in the HTML id and placing it on the DOM
-renderToDom("#schoolAssgn", randomHouse)
+//   //Calling the function and telling it to put the information
+// //in the HTML id and placing it on the DOM
+// renderToDom("#schoolAssgn", randomHouse)
 //   const newStudent = {
 //     id: randomHouse.length + 1,
 //     imageUrl: document.querySelector("#imageUrl").value,
@@ -95,7 +95,7 @@ renderToDom("#schoolAssgn", randomHouse)
 //   }
 // //Adds new student from the new student input and clears out the form
 //     schoolAssgn.push(newStudent);
-//     schoolOnDom(pets);
+//     schoolOnDom(Houses);
 //     form.reset();
 
 

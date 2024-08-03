@@ -2,7 +2,18 @@
   width: 1000px;
   display: flex;
   flex-wrap: wrap;
+  background-color: gray;
+  .container2 {
+    margin-left: 200px;
+  }  
 }
+#intro-heading{
+  margin-bottom:20px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+}
+
 
 .introButton {
   display: block;
@@ -15,9 +26,6 @@
 
 #schoolAssgn {
   margin-right: 50px;
-}
-.container2 {
-  margin-left: 200px;
 }
 
 .card {
