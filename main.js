@@ -49,63 +49,54 @@ introButton.addEventListener("click", () => {
   console.log("introButton test");
 });
 
-  //Function that pulls a random house from the Houses array, 
-  //trying to combine it with the schoolOnDom array so maybe
-  // I can get the random card to display on the DOM, no luck yet, 
-  //it seems to be picking random Houses and showing the id only.
-  // Finally got it to do the same thing as the two seperate codes, 
-  //so I combined them!!! Still not correct but progress:)
-    function sorting_Houses ()  {
+//A function that takes the information from the Houses array and
+//enters it into bootstrap html code below and puts it on the DOM
+ 
       
-      let domString = "";
-      const randomHouse = Math.floor(Math.random() * Houses.length);
-          Houses.forEach((Houses) => {
-            domString += `<div class="card" style="width: 14rem;" >
-              <img src=${Houses.imageUrl} class="card-img-top" alt=${Houses.houseAssgn}>
-              <div class="card-body">
-              <h5 class="house-title">${Houses.houseAssgn}</h5>
-                <p class="welcome-text">Welcome, ${Houses.name} your path has been chosen!</p>
-              <a href="#" class="btn btn-primary">Expel</a>
-            </div>
-              </div>`;
-              }
-             )
-              return Houses [randomHouse];
-              //renderToDom("#hats", randomHouse)
-              //returns nothing, needs return Houses [randomHouse] above it, 
-              //tried sorting_Houses(and w/o), Houses does not like statement
-              
-    }
-    //renderToDom("#hats", sorting_Houses())
-     //returns object Object on DOM
-    const result = sorting_Houses();
-  let randomH = result.randomHouse 
-  let newHouse = result.sorting_Houses
-  let DOM = result.domString;
+  const schoolsOnDom = (Houses) => {
+    let domString ="";
   
-  console.log(sorting_Houses()); //works if return on function says Houses[randomHouse]
+    Houses.forEach((Houses) => {
+      domString += `<div class="card" style="width: 14rem;" >
+        <img src=${Houses.imageUrl} class="card-img-top" alt=${Houses.houseAssgn}>
+        <div class="card-body">
+        <h5 class="house-title">${Houses.houseAssgn}</h5>
+          <p class="welcome-text">Welcome, ${Houses.name} your path has been chosen!</p>
+        <a href="#" class="btn btn-primary">Expel</a>
+      </div>
+        </div>`;
+        })
+          return ["#schoolAssgn", domString]
+        
+      }
+    
+     // These two work in the fact that they pull a random house
+     //and place them on the DOM and console log them but
+     //it is not in card format, 
+    function sorting_Houses () {
+      const randomHouse = Math.floor(Math.random() * Houses.length);
+      return Houses[randomHouse]
+    }
+  
+    const randomHouse = sorting_Houses();
+   
+    // console.log(sorting_Houses) //works if return on function says Houses[randomHouse]
 
-  //Still no luck presenting random card on DOM:(
+    console.log(randomHouse)
 
-  // console.log(DOM);  undefined
-  //console.log(newHouse) undefined
-  //renderToDom("#hats", randomH) returns undefined
-  //renderToDom("#hats", domString) says not defined in console
-  //renderToDom("#hats", DOM) prints undefined on DOM
-
-
-
-   // // These two work in the fact that they pull a random house
-   // and place them on the DOM and console log them but
-   // it is not in card format, 
-   //I did try stringify but of course that just makes a string
-  // function sorting_Houses () {
-  //   const randomHouse = Math.floor(Math.random() * Houses.length);
-  //   return Houses [randomHouse]
-  // }
-
-  // let randomHouse = sorting_Houses(Houses);
-  // console.log(randomHouse) 
+  //Calling the function and telling it to put the information
+//in the HTML id and placing it on the DOM
+renderToDom("#schoolAssgn", randomHouse)
+//   const newStudent = {
+//     id: randomHouse.length + 1,
+//     imageUrl: document.querySelector("#imageUrl").value,
+//     name: document.querySelector("#name").value,
+//     houseAssgn: document.querySelector("#type").value
+//   }
+// //Adds new student from the new student input and clears out the form
+//     schoolAssgn.push(newStudent);
+//     schoolOnDom(pets);
+//     form.reset();
 
 
 //Trying to combine the function and the array did not work, 
@@ -130,24 +121,51 @@ introButton.addEventListener("click", () => {
 //   randomHouse.push(newHouses);
 //   renderToDom("hats", newHouses)
 // }
+ 
+  //   console.log(DOM);  undefined
+  //   console.log(newHouse) undefined
+  //   renderToDom("#hats", randomH) returns undefined
+  //   renderToDom("#hats", domString) says not defined in console
+  //   renderToDom("#hats", DOM) prints undefined on DOM
+  //   const result = sorting_Houses();
+  // let randomH = result.randomHouse 
+
+    //Function that pulls a random house from the Houses array, 
+  //trying to combine it with the schoolOnDom array so maybe
+  // I can get the random card to display on the DOM, no luck yet, 
+  //it seems to be picking random Houses and showing the id only.
+  // Finally got it to do the same thing as the two seperate codes, 
+  // //so I combined them!!! Still not correct but progress:)
+  // let newHouse = result.sorting_Houses
+  // let DOM = re
+//   function sorting_Houses ()  {
+//     let domString = "";
+//     const randomHouse = Math.floor(Math.random() * Houses.length);
+//         Houses.forEach((Houses) => {
+//           domString += `<div class="card" style="width: 14rem;" >
+//             <img src=${Houses.imageUrl} class="card-img-top" alt=${Houses.houseAssgn}>
+//             <div class="card-body">
+//             <h5 class="house-title">${Houses.houseAssgn}</h5>
+//               <p class="welcome-text">Welcome, ${Houses.name} your path has been chosen!</p>
+//             <a href="#" class="btn btn-primary">Expel</a>
+//           </div>
+//             </div>`;
+//             }
+//            )
+//             return ["#schoolAssgn", Houses[randomHouse];
+//           }
 
 
-  //A function that takes the information from the Houses array and
-// //enters it into bootstrap html code below and puts it on the DOM
-// const schoolsOnDom = (Houses) => {
-//   let domString ="";
+//       //returns nothing, needs return Houses [randomHouse] above it, 
+//       // tried sorting_Houses(and w/o), Houses does not like statement
+//     const randomHouse = sorting_Houses() 
+    
+  
+//   console.log(randomHouse); //works if return on function says Houses[randomHouse]
+//   // const result = randomHouse;
+//   // let randomH = result.randomHouse on log give object Object
+//   // let newHouse = result.randomHouse undefined
+//   // let DOM = result.domString; gives undefined
 
-//   Houses.forEach((Houses) => {
-//     domString += `<div class="card" style="width: 14rem;" >
-//       <img src=${Houses.imageUrl} class="card-img-top" alt=${Houses.houseAssgn}>
-//       <div class="card-body">
-//       <h5 class="house-title">${Houses.houseAssgn}</h5>
-//         <p class="welcome-text">Welcome, ${Houses.name} your path has been chosen!</p>
-//       <a href="#" class="btn btn-primary">Expel</a>
-//     </div>
-//       </div>`;
-//       })
-// //Calling the function and telling it to put the information
-// in the HTML id and placing it on the DOM
-//       renderToDom("#hats", domString)
-//     }
+// //Still no luck presenting random card on DOM:(
+ 
