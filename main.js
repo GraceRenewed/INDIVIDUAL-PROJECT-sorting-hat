@@ -38,7 +38,7 @@ const renderToDom = (divId, htmlToRender) => {
 
 const introButton = document.querySelector("#introButton");
 const form = document.querySelector("#form");
-const schoolAssgn =document.querySelector("#schoolAssgn")
+const schoolBox =document.querySelector("#schoolAssgn")
 
 
 //when the introButton(Let the Sorting Begin) is clicked
@@ -53,21 +53,24 @@ introButton.addEventListener("click", () => {
 //enters it into bootstrap html code below and puts it on the DOM
  
       
-  const schoolsOnDom = (Houses) => {
-    let domString ="";
+const schoolAssgn = (Houses) => {
+  let domString ="";
+
+  Houses.forEach((item) => {
+    domString += `<div class="card" style="width: 14rem;" >
+      <img src=${item.imageUrl} class="card-img-top" alt=${item.houseAssgn}>
+      <div class="card-body">
+      <h5 class="house-title">${item.houseAssgn}</h5>
+      <p class="welcome-text">Welcome, ${item.name} your path has been chosen!</p>
+      <a href="#" class="btn btn-primary">Expel</a>
+  </div>
+    </div>`;
+  })
+  renderToDom("#schoolAssgn", domString);
+}
+
+  schoolAssgn(Houses)
   
-    Houses.forEach((Houses) => {
-      domString += `<div class="card" style="width: 14rem;" >
-        <img src=${Houses.imageUrl} class="card-img-top" alt=${Houses.houseAssgn}>
-        <div class="card-body">
-        <h5 class="house-title">${Houses.houseAssgn}</h5>
-          <p class="welcome-text">Welcome, ${Houses.name} your path has been chosen!</p>
-        <a href="#" class="btn btn-primary" id="delete--${Houses.id}">Expel</a>
-      </div>
-        </div>`;
-        })
-        renderToDom("#schoolAssgn", domString)
-      }
     
 //      // These two work in the fact that they pull a random house
 //      //and place them on the DOM and console log them but
