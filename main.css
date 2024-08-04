@@ -2,15 +2,10 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-items: first baseline;
+  justify-content: space-evenly;
   background-color: gray;
-  #schoolAssgn {
-    margin-right: auto;
-  }
   
-  .container2 {
-    margin-left: auto;
-  }  
+  
 }
 
 #journey {
