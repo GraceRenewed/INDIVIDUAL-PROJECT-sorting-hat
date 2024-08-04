@@ -75,12 +75,12 @@ const schoolAssgn = (Houses) => {
 //      // These two work in the fact that they pull a random house
 //      //and place them on the DOM and console log them but
 //      //it is not in card format, 
-//     function sorting_Houses () {
-//       const randomHouse = Math.floor(Math.random() * Houses.length);
-//       return Houses[randomHouse]
-//     }
+    function sorting_Houses () {
+      const randomHouse = Math.floor(Math.random() * Houses.length);
+      return Houses[randomHouse]
+    }
   
-//     const randomHouse = sorting_Houses();
+    const randomHouse = sorting_Houses();
    
 //     // console.log(sorting_Houses) //works if return on function says Houses[randomHouse]
 
