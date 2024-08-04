@@ -32,7 +32,7 @@ const renderToDom = (divId, htmlToRender) => {
   //Gives a name to use in JS to a specific divId in html
   const selectedDiv = document.querySelector(divId);
   //tells JS to insert that information into the html document that will then render to the DOM
-  selectedDiv.innerHTML =htmlToRender;
+  selectedDiv.innerHTML = htmlToRender;
 }
 
 
@@ -62,14 +62,13 @@ introButton.addEventListener("click", () => {
         <div class="card-body">
         <h5 class="house-title">${Houses.houseAssgn}</h5>
           <p class="welcome-text">Welcome, ${Houses.name} your path has been chosen!</p>
-        <a href="#" class="btn btn-primary">Expel</a>
+        <a href="#" class="btn btn-primary" id="delete--${Houses.id}">Expel</a>
       </div>
         </div>`;
         })
-         renderToDom("#schoolAssgn", domString)
-        
+        renderToDom("#schoolAssgn", domString)
       }
-    //renderToDom("#schoolsOnDom", domString)
+    
 //      // These two work in the fact that they pull a random house
 //      //and place them on the DOM and console log them but
 //      //it is not in card format, 
