@@ -65,8 +65,9 @@ introButton.addEventListener("click", () => {
         <a href="#" class="btn btn-primary" id="delete--${Houses.id}">Expel</a>
       </div>
         </div>`;
-        })
+       
         renderToDom("#schoolAssgn", domString)
+      }) 
       }
     
 //      // These two work in the fact that they pull a random house
