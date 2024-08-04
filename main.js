@@ -71,6 +71,7 @@ const schoolAssgn = (Houses) => {
 
   schoolAssgn(Houses)
   
+
     
 //      // These two work in the fact that they pull a random house
 //      //and place them on the DOM and console log them but
