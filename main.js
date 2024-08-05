@@ -38,7 +38,7 @@ const renderToDom = (divId, htmlToRender) => {
 
 const introButton = document.querySelector("#introButton");
 const form = document.querySelector("#form");
-const schoolBox =document.querySelector("#schoolAssgn")
+const schoolBox =document.querySelector("#schoolAssgn");
 
 
 //when the introButton(Let the Sorting Begin) is clicked
@@ -57,7 +57,7 @@ const schoolAssgn = (house) => {
       <img src=${house.imageUrl} class="card-img-top" alt=${house.houseAssgn}>
       <div class="card-body">
       <h5 class="house-title">${house.houseAssgn}</h5>
-      <p class="welcome-text">Welcome, ${form.name} your path has been chosen!</p>
+      <p class="welcome-text">Welcome, ${form.student} your path has been chosen!</p>
       <a href="#" class="btn btn-primary">Expel</a>
   </div>
     </div>`;
@@ -73,14 +73,20 @@ const schoolAssgn = (house) => {
     //This assigns the name randomHouse to the sorting_Houses function
     //and inserts a randomHouse into the schoolAssign function to 
     //render into HTML code
-   const randomHouse = sorting_Houses(Houses);
+    const randomHouse = sorting_Houses(Houses);
    
-
+  
    console.log(randomHouse)
 
-   form.addEventListener("submit",schoolAssgn(randomHouse) )
+   form.addEventListener("submit", schoolAssgn(randomHouse))
 
-   //Need to add eventListener to possibly store the value of the name and
+   const input = document.getElementById("#student").value; //tried this and serveral variations 
+    console.log(input);                             //of this code, returning null (next fix)
+   //const inputValue = ("#student").valueOf;
+   //console.log(inputValue);
+   
+
+   // store the value of the name and
    //store it to a variable, need to make it where the Houses stay once assigned
   // const createStudent = (e) => {
   //   e.preventDefault();
