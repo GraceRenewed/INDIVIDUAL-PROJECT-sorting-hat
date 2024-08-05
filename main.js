@@ -2,26 +2,26 @@ const Houses = [
   {
     id: 1,
     imageUrl: "https://thumbnail.imgbin.com/23/15/25/imgbin-gryffindor-fat-friar-the-bloody-baron-professor-filius-flitwick-nearly-headless-nick-harry-potter-lion-portrait-x5Z4azQY2TEZUfGZXqWAZKcFa_t.jpg",
-    name: "#name",
+    name: "input",
     houseAssgn: "Gryffindor"
   },
   {
     id: 2,
     imageUrl: "https://i.pinimg.com/236x/1f/52/5e/1f525e707a27fe891f2b689131a5e0f7.jpg",
-    name: "#name",
+    name: "input",
     houseAssgn: "Hufflepuff"
 
   },
   {
     id: 3,
     imageUrl: "https://www.pngmart.com/files/12/Ravenclaw-House-PNG-Picture.png",
-    name: "#name",
+    name: "#input",
     houseAssgn: "Ravenclaw"
   },
   {
     id: 4,
     imageUrl: "https://i.pinimg.com/236x/9b/cb/24/9bcb24c897c823f80401654dc529fa44.jpg",
-    name: "#name",
+    name: "#input",
     houseAssgn: "Slytherin"
   }
 ]
@@ -80,8 +80,13 @@ const schoolAssgn = (house) => {
 
    form.addEventListener("submit", schoolAssgn(randomHouse))
 
-   const input = document.getElementById("#student").value; //tried this and serveral variations 
-    console.log(input);                             //of this code, returning null (next fix)
+   
+   const luna = document.querySelector("input");//tried this and serveral variations with and without .value(if value present says line 86 not a function)
+    
+   luna.addEventListener("click", () => {
+   schoolAssgn(randomHouse);
+   });    //tried click and submit
+  // console.log(luna.addEventListener()); //of this code, returning null (next fix)
    //const inputValue = ("#student").valueOf;
    //console.log(inputValue);
    
