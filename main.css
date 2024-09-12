@@ -1,13 +1,3 @@
-#wrapper {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  background-color: gray;
-  
-  
-}
-
 #journey {
   justify-content: center;
 }
@@ -20,7 +10,6 @@
 }
 
 
-
 #introButton {
   display: inline-block;
   margin: 0 auto;
@@ -29,13 +18,40 @@
 }
 #name {
   display: inline-flex;
-  width: auto;
 }
 #sortButton {
   margin-bottom: 25px;
 }
 
+#wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: gray;
+}
 
+#voldemortClan {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: rgb(69, 209, 69);
+}
+
+.schools {
+  margin-top: 25px;
+  text-align: center;
+  color: rgb(228, 165, 48);
+  font-size: x-large;
+}
+
+.voldemort {
+  margin-top: 25px;
+  text-align: center;
+  color: rgb(163, 6, 6);
+  font-size: x-large;
+}
 
 .card {
   height: 400px;
