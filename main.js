@@ -1,48 +1,53 @@
 const students = [
    {
-     id: 1,
-    student: Harry,
-    house: Gryffindor
+    id: 1,
+    student: "Luna",
+    house: "Hufflepuff",
    },
   {
     id: 2,
-    student: Ron,
-    house: Gryffindor
+    student: "Ron",
+    house: "Gryffindor",
   },
   {
     id: 3,
-    studdent: Hermonie,
-    house: Gryffindor
-  }
+    student: "Hermonie",
+    house: "Gryffindor",
+  },
+  {
+    id: 4,
+    student: "Harry",
+    house: "Gryffindor",
+  },
 ]
 
-// const Houses = [
-//   {
-//     id: 1,
-//     imageUrl: "https://thumbnail.imgbin.com/23/15/25/imgbin-gryffindor-fat-friar-the-bloody-baron-professor-filius-flitwick-nearly-headless-nick-harry-potter-lion-portrait-x5Z4azQY2TEZUfGZXqWAZKcFa_t.jpg",
-//     name: "student",
-//     houseAssgn: "Gryffindor"
-//   },
-//   {
-//     id: 2,
-//     imageUrl: "https://i.pinimg.com/236x/1f/52/5e/1f525e707a27fe891f2b689131a5e0f7.jpg",
-//     name: "student",
-//     houseAssgn: "Hufflepuff"
+const Houses = [
+  {
+    id: 1,
+    imageUrl: "https://thumbnail.imgbin.com/23/15/25/imgbin-gryffindor-fat-friar-the-bloody-baron-professor-filius-flitwick-nearly-headless-nick-harry-potter-lion-portrait-x5Z4azQY2TEZUfGZXqWAZKcFa_t.jpg",
+    name: "student",
+    houseAssgn: "Gryffindor"
+  },
+  {
+    id: 2,
+    imageUrl: "https://i.pinimg.com/236x/1f/52/5e/1f525e707a27fe891f2b689131a5e0f7.jpg",
+    name: "student",
+    houseAssgn: "Hufflepuff"
 
-//   },
-//   {
-//     id: 3,
-//     imageUrl: "https://www.pngmart.com/files/12/Ravenclaw-House-PNG-Picture.png",
-//     name: "student",
-//     houseAssgn: "Ravenclaw"
-//   },
-//   {
-//     id: 4,
-//     imageUrl: "https://i.pinimg.com/236x/9b/cb/24/9bcb24c897c823f80401654dc529fa44.jpg",
-//     name: "student",
-//     houseAssgn: "Slytherin"
-//   }
-// ]
+  },
+  {
+    id: 3,
+    imageUrl: "https://www.pngmart.com/files/12/Ravenclaw-House-PNG-Picture.png",
+    name: "student",
+    houseAssgn: "Ravenclaw"
+  },
+  {
+    id: 4,
+    imageUrl: "https://i.pinimg.com/236x/9b/cb/24/9bcb24c897c823f80401654dc529fa44.jpg",
+    name: "student",
+    houseAssgn: "Slytherin"
+  }
+]
 
 //Utility funciton that puts html on the DOM by inserting
 // information in the location specified by the divID 
@@ -52,24 +57,25 @@ const renderToDom = (divId, htmlToRender) => {
   //tells JS to insert that information into the html document that will then render to the DOM
   selectedDiv.innerHTML = htmlToRender;
 }
-const cardsOnDom = (students) => {
+
+const cardsOnDom = (Houses) => {
   let domString = "";
   //The for loop allows us to go through each pet in the array and pull out data within them choosing which data will be displayed on the internet page using the arrow function above
-  for (const student of students) {
+  for (const house of Houses) {
     domString += `<div class="card" style="width: 18rem;">
       <div class="card-body">
-       <h3 class="student-name">${student.student}</h3>
-      <button class="btn btn-danger" id="delete--${student.id}">Expel</button>
+       <h3 class="student-name">${house.name}</h3>
+      <button class="btn btn-danger" id="delete--${house.id}">Expel</button>
     </div>
       <div>
-        <h3 class=${student.house}></h3>
+        <h3 class=${house.name}></h3>
     </div>`; 
   }
 
   //Places all the information from the app and puts it on the internet page
-  renderToDom("#app", domString);
+  renderToDom("#schoolAssgn", domString);
   }
-  cardsOnDom(students);
+  
 
 
 // const introButton = document.querySelector("#introButton");
@@ -140,4 +146,9 @@ const cardsOnDom = (students) => {
   //  
   //   form.reset();
   // }
+  const startApp = () => {
+    cardsOnDom(Houses);
+  }
+
+  startApp();
   
