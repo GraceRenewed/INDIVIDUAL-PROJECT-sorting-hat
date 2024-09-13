@@ -23,20 +23,21 @@
   margin-bottom: 25px;
 }
 
-#wrapper {
-  width: 100%;
+  #schoolAssgn {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+}
+  #schoolAssgn > div {
   background-color: gray;
+  width: 33%;
 }
 
+
 #voldemortClan {
-  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+}
+#voldemortClan > div { 
   background-color: rgb(69, 209, 69);
+  width: 33%; 
 }
 
 .schools {
